@@ -1,0 +1,10 @@
+
+<form [formGroup]="uploadForm">
+  <div formArrayName="files">
+    <div *ngFor="let control of files.controls; let i = index">
+      <ng-container [formGroupName]="i">
+        <input type="file" formControlName="name" (change)="onFileChange($event, i)">
+      </ng-container>
+    </div>
+  </div>
+</form>
